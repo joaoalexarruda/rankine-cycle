@@ -48,8 +48,7 @@
 % Pacotes de citações
 % ---
 \usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
-\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
-% ---
+\usepackage[alf, abnt-emphasize=bf]{abntex2cite} % Estilo ABNT alfabético% ---
 
 % ---
 % Configurações do pacote backref
@@ -78,7 +77,7 @@ João Alex Arruda da Silva
 Hanna Rodrigues Ferreira}
 
 \local{Brasil}
-\data{Janeiro, 2025}
+\data{Fevereiro, 2025}
 % ---
 
 % ---
@@ -202,8 +201,15 @@ Este trabalho pretende analisar detalhadamente o ciclo de Rankine e suas variaç
 
 \subsection{Definição do ciclo de Rankine}
 
-O Ciclo de Rankine é um ciclo termodinâmico idealizado que descreve o funcionamento de uma usina termelétrica convencional. Esse ciclo é composto por quatro processos termodinâmicos: compressão, aquecimento, expansão e resfriamento. A Figura \ref{} ilustra o diagrama de um ciclo de Rankine básico.
+O Ciclo de Rankine é um ciclo termodinâmico idealizado que descreve o funcionamento de uma usina termelétrica convencional. Esse ciclo é composto por quatro processos termodinâmicos: compressão, aquecimento, expansão e resfriamento. A Figura \ref{fig:esquema-simplificado-ciclo-rankine} ilustra o diagrama de um ciclo de Rankine básico.
 
+\begin{figure}[h]
+	\centering
+	\caption{Esquema simplificado e o diagrama T-S do ciclo Rankine}
+	\includegraphics[width=0.7\textwidth]{./images/Esquema simplificado e o diagrama T-S do ciclo Rankine.png}
+	\label{fig:esquema-simplificado-ciclo-rankine}
+	\fonte{Adaptado de \cite{borgnakke-2020}}
+\end{figure}
 
 % ---
 % Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
@@ -224,6 +230,7 @@ O Ciclo de Rankine é um ciclo termodinâmico idealizado que descreve o funciona
 % ----------------------------------------------------------
 % Referências bibliográficas
 % ----------------------------------------------------------
+\clearpage
 \bibliography{abntex2-modelo-references}
 
 
