@@ -211,6 +211,89 @@ O Ciclo de Rankine é um ciclo termodinâmico idealizado que descreve o funciona
 	\fonte{Adaptado de \cite{borgnakke-2020}}
 \end{figure}
 
+O fluido de trabalho fica sujeito à seguinte sequência de processos reversíveis internamente: \cite{borgnakke-2020}
+
+\begin{itemize}
+	\item \textbf{Processo 1-2}: Processo de bombeamento adiabático reversível na bomba.
+	\item \textbf{Processo 2-3}: Transferência de calor a pressão constante na caldeira.
+	\item \textbf{Processo 3-4}: Expansão adiabática reversível na turbina (ou em outra máquina motora, tal como a máquina a vapor).
+	\item \textbf{Processo 4-1}: Transferência de calor a pressão constante no condensador.
+\end{itemize}
+
+Ao desconsiderar as variações de energia cinética e potencial, as trocas de calor e o trabalho líquido do sistema podem ser visualizados como áreas específicas no diagrama temperatura-entropia (T-s). O calor absorvido pelo fluido de trabalho corresponde à área delimitada pelos pontos a-2-2'-3-b-a, enquanto o calor rejeitado pelo fluido é representado pela área a-1-4-b-a. Aplicando a primeira lei da termodinâmica, conclui-se que o trabalho líquido é equivalente à diferença entre essas duas áreas, ou seja, corresponde à região 1-2-2'-3-4-1 no diagrama \cite{borgnakke-2020}.
+
+Na análise do ciclo Rankine, é útil considerar que o rendimento depende da temperatura média na qual o calor é fornecido e da temperatura média na qual o calor é rejeitado. Qualquer variação que aumente a temperatura média na qual o calor é fornecido, ou que diminua a temperatura média na qual o calor é rejeitado, aumentará o rendimento do ciclo Rankine.
+
+\subsection{Componentes Básicos}
+
+Independentemente de um modelo detalhado ou simplificado de usina a vapor baseada no ciclo Rankine, os fundamentos termodinâmicos (conservação de massa/energia, segunda lei e dados termodinâmicos) aplicam-se tanto aos componentes individuais (turbinas, bombas, trocadores de calor) quanto ao ciclo global.
+
+Focando no subsistema mostrado na Figura \ref{fig:planta-exemplo}, modelam-se os quatro componentes principais: turbina, condensador, bomba e caldeira, com água como fluido de trabalho. Usinas a combustíveis fósseis são analisadas como referência, mas os princípios valem para outros tipos.
+
+\begin{figure}[h]
+	\centering
+	\caption{Planta de potência a vapor acionada por combustível fóssil}
+	\includegraphics[width=1.0\textwidth]{./images/planta-exemplo.png}
+	\label{fig:planta-exemplo}
+	\fonte{\
+	cite{moran-2018}}
+\end{figure}
+
+No diagrama da Fig. 2, trabalho e calor são positivos conforme as setas, para simplificar a análise usamos algumas hipóteses frequentes, conforme descrito abaixo:
+\begin{itemize}
+	\item R. P. em todos os componentes.
+	\item Energia potencial e cinética desprezível.
+    \item Perdas de pressão na caldeira e no condensador desprezíveis.
+    \item Bombas e turbinas são consideradas isentrópicas.
+\end{itemize}
+
+Será mostrado a seguir a modelagem do ciclo para cada componente do ciclo Rankine, conforme é exibido por \citeonline{moran-2018}
+
+\subsubsection{Turbina}
+
+A turbina é o componente que converte a energia térmica do vapor em trabalho mecânico. O vapor entra na turbina com uma pressão e temperatura elevadas e sai com pressão e temperatura menores. O trabalho líquido da turbina é a diferença entre o trabalho de entrada e saída, conforme a equação \ref{eq:trabalho-turbina}.
+
+\begin{equation}
+	\dot{W}_{\text{turbina}} = \dot{m}(h_1 - h_2)
+	\label{eq:trabalho-turbina}
+\end{equation}
+
+\subsubsection{Condensador}
+
+O condensador é o componente que converte o vapor em água líquida, rejeitando calor para o ambiente. O calor rejeitado pelo condensador é a diferença entre o calor de entrada e saída, conforme a equação \ref{eq:calor-condensador}.
+
+\begin{equation}
+	\dot{Q}_{\text{condensador}} = \dot{m}(h_2 - h_3)
+	\label{eq:calor-condensador}
+\end{equation}
+
+\subsubsection{Bomba}
+
+A bomba é o componente que comprime a água líquida, aumentando sua pressão. O trabalho líquido da bomba é a diferença entre o trabalho de entrada e saída, conforme a equação \ref{eq:trabalho-bomba}.
+
+\begin{equation}
+	\dot{W}_{\text{bomba}} = \dot{m}(h_4 - h_3)
+	\label{eq:trabalho-bomba}
+\end{equation}
+
+\subsubsection{Caldeira}
+
+A caldeira é o componente que converte a água líquida em vapor, absorvendo calor do ambiente. O calor absorvido pela caldeira é a diferença entre o calor de entrada e saída, conforme a equação \ref{eq:calor-caldeira}.
+
+\begin{equation}
+	\dot{Q}_{\text{caldeira}} = \dot{m}(h_1 - h_2)
+	\label{eq:calor-caldeira}
+\end{equation}
+
+\subsection{Parâmetros de Desempenho}
+
+A eficiência térmica do ciclo Rankine é dada pela razão entre o trabalho líquido produzido e o calor fornecido na caldeira, conforme a equação \ref{eq:eficiencia-termica}.
+
+\begin{equation}
+	\eta = \frac{\dot{W}_{\text{turbina}}}{\dot{Q}_{\text{caldeira}}}
+	\label{eq:eficiencia-termica}
+\end{equation}
+
 % ---
 % Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
 % ---

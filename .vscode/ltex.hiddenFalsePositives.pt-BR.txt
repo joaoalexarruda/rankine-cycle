@@ -10,3 +10,9 @@
 {"rule":"CHEMICAL_FORMULAS_TYPOGRAPHY","sentence":"^\\QObjetivo: a desmineralização é o processo de remoção de íons minerais dissolvidos na água, como cálcio (Ca2+), magnésio (Mg2+), sódio (Na+) e cloretos (Cl-), que contribuem para a formação de incrustações e corrosão.\\E$"}
 {"rule":"CHEMICAL_FORMULAS_TYPOGRAPHY","sentence":"^\\QObjetivo: a desgaseificação visa remover gases dissolvidos, como oxigênio (O2) e dióxido de carbono (CO2), que podem reagir com os metais da caldeira e causar corrosão.\\E$"}
 {"rule":"GENERAL_NUMBER_AGREEMENT_ERRORS","sentence":"^\\QDesgaseificação Química: agentes químicos (como sulfito de sódio ou hidrazina) são adicionados para reagir quimicamente com os gases dissolvidos, formando compostos inertes.\\E$"}
+{"rule":"MORFOLOGIK_RULE_PT_BR","sentence":"^\\QSerá mostrado a seguir a modelagem do ciclo para cada componente do ciclo Rankine, conforme é exibido por moran-2018\\E$"}
+{"rule":"MORFOLOGIK_RULE_PT_BR","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-)[0-9]+\\Qturbina \\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-)[0-9]+$"}
+{"rule":"MORFOLOGIK_RULE_PT_BR","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-)[0-9]+\\Qcondensador \\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-)[0-9]+$"}
+{"rule":"MORFOLOGIK_RULE_PT_BR","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-)[0-9]+\\Qbomba \\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-)[0-9]+$"}
+{"rule":"MORFOLOGIK_RULE_PT_BR","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-)[0-9]+\\Qcaldeira \\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-)[0-9]+$"}
+{"rule":"MORFOLOGIK_RULE_PT_BR","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-)[0-9]+\\Qturbina \\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-)[0-9]+\\Qcaldeira \\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-)[0-9]+$"}
