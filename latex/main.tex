@@ -167,18 +167,19 @@ Hanna Rodrigues Ferreira}
 
 % resumo em português
 \begin{resumoumacoluna}
- Conforme a ABNT NBR 6022:2018, o resumo no idioma do documento é elemento obrigatório.
- Constituído de uma sequência de frases concisas e objetivas e não de uma
- simples enumeração de tópicos, não ultrapassando 250 palavras, seguido, logo
- abaixo, das palavras representativas do conteúdo do trabalho, isto é,
- palavras-chave e/ou descritores, conforme a NBR 6028. (\ldots) As
- palavras-chave devem figurar logo abaixo do resumo, antecedidas da expressão
- Palavras-chave:, separadas entre si por ponto e finalizadas também por ponto.
+	Este trabalho analisa o ciclo de Rankine, muito utilizado na geração de energia
+	nas usinas termelétricas que operam com vapor. São abordados seus processos
+	básicos e modificações que aumentam a eficiência térmica, como superaquecimento,
+	reaquecimento, regeneração e entre outras. A metodologia inclui uma revisão teórica
+	e um estudo de caso em que realizamos cálculos de eficiência térmica, trabalho das
+	turbinas e bombas, vazão mássica e construção dos diagramas T-s. Além disso, é
+	realizado uma análise paramétrica do desempenho do ciclo. Os resultados nos
+	mostram que tais modificações melhoram a eficiência, mas que é necessário um estudo aprofundado.
 
  \vspace{\onelineskip}
 
  \noindent
- \textbf{Palavras-chave}: latex. abntex. editoração de texto.
+ \textbf{Palavras-chave}: Ciclo de Rankine. Eficiência térmica. Superaquecimento. Diagrama T-s.
 \end{resumoumacoluna}
 
 % ----------------------------------------------------------
@@ -287,12 +288,202 @@ A caldeira é o componente que converte a água líquida em vapor, absorvendo ca
 
 \subsection{Parâmetros de Desempenho}
 
+\subsubsection{Eficiência Térmica}
+
 A eficiência térmica do ciclo Rankine é dada pela razão entre o trabalho líquido produzido e o calor fornecido na caldeira, conforme a equação \ref{eq:eficiencia-termica}.
 
 \begin{equation}
 	\eta = \frac{\dot{W}_{\text{turbina}}}{\dot{Q}_{\text{caldeira}}}
 	\label{eq:eficiencia-termica}
 \end{equation}
+
+\subsubsection{Taxa de Calor}
+
+A taxa de calor representa a quantidade de energia térmica fornecida ao sistema (geralmente medida em Btu) necessária para gerar uma unidade de trabalho útil produzido pelo ciclo (normalmente expresso em kWh). Por isso, ela é definida como a razão entre a energia térmica consumida e o trabalho líquido gerado, com unidades de Btu/kWh. Essa taxa tem uma relação inversa com a eficiência termodinâmica do ciclo: quanto maior a eficiência, menor a quantidade de calor requerida para produzir a mesma quantidade de trabalho.
+
+\subsubsection{Back work ratio}
+
+\begin{figure}[h]
+	\centering
+	\caption{Planta de potência a vapor acionada por combustível fóssil}
+	\includegraphics[width=0.5\textwidth]{./images/trabalho-realizado.png}
+	\label{fig:trabalho-realizado}
+	\fonte{\cite{moran-2018}}
+\end{figure}
+
+O back work ratio (bwr) é um parâmetro que quantifica a relação entre o trabalho consumido pela bomba e o trabalho gerado pela turbina no ciclo de potência. Para o sistema da Figura \ref{fig:trabalho-realizado}, usando as equações já definidas para o trabalho da bomba e da turbina, o bwr é calculado pela equação \ref{eq:bwr}.
+
+\begin{equation}
+	\text{bwr} = \frac{\dot{W}_{\text{bomba}}}{\dot{W}_{\text{turbina}}}
+	\label{eq:bwr}
+\end{equation}
+
+\subsection{Aplicações do Ciclo de Rankine}
+
+Dentre os sete tipos de usinas de energia que operam com base em ciclos termodinâmicos, seis estão diretamente vinculadas ao ciclo de Rankine. Esse ciclo é o elemento fundamental das usinas termelétricas a vapor, servindo como modelo central para conversão de calor em trabalho mecânico ou elétrico. Sua versatilidade permite aplicações em sistemas que vão desde usinas nucleares e movidas a combustíveis fósseis até fontes renováveis, como geotérmica e solar térmica, consolidando-o como pilar da geração de energia em larga escala.
+
+A Figura \ref{fig:etn} mostra a turbina de Angra 2, uma usina nuclear que opera com base no ciclo de Rankine. A usina é composta por um reator nuclear, que gera calor, e uma turbina a vapor, que converte esse calor em energia elétrica. O ciclo de Rankine é responsável por transferir o calor do reator para a turbina, garantindo a eficiência do processo.
+
+\begin{figure}[h]
+	\centering
+	\caption{Turbina de Angra 2}
+	\includegraphics[width=0.7\textwidth]{./images/etn.jpg}
+	\label{fig:etn}
+	\fonte{\cite{Eletronuclear_Imagem_Angra}}
+\end{figure}
+
+\section{Parâmetros de influência na eficiência do ciclo de Rankine}
+
+\subsection{Efeitos Da Pressão E Da Temperatura No Ciclo Rankine}
+
+No ciclo Rankine, a pressão e a temperatura afetam diretamente o rendimento e o trabalho líquido realizado no ciclo. Em seguida, examinam-se os principais impactos dessas variáveis, juntamente com suas respectivas representações gráficas.
+
+\subsection{Efeito da Pressão na Saída da Turbina}
+
+No diagrama T-s da Figura \ref{fig:efeito-pressao}, observa-se o efeito da redução da pressão na saída da turbina, de P4 para P4'. Essa redução causa uma diminuição na temperatura na qual o calor é rejeitado. O aumento do trabalho líquido é representado pela área 1-4-4'-1'-2-2'-1, enquanto o aumento do calor transferido ao fluido corresponde à área a'-2'-2-a. Como essas duas áreas são aproximadamente iguais, o rendimento do ciclo aumenta, devido à redução da temperatura média de rejeição de calor. A redução da pressão também diminui o título do vapor na saída da turbina. Se a umidade ultrapassar 10\%, pode ocorrer erosão das palhetas e queda na eficiência \cite{borgnakke-2020}.
+
+\begin{figure}[h]
+	\centering
+	\caption{Efeito da pressão de descarga da turbina sobre o rendimento do ciclo Rankine}
+	\includegraphics[width=0.4\textwidth]{./images/efeito-pressao.png}
+	\label{fig:efeito-pressao}
+	\fonte{\cite{borgnakke-2020}}
+\end{figure}
+
+\subsubsection{Efeito do Superaquecimento do Vapor}
+
+Na Figura \ref{fig:efeito-vapor}, é mostrado o efeito do superaquecimento do vapor. O trabalho líquido aumenta correspondendo à área 3-3'-4'-4-3, e o calor transferido na caldeira aumenta com a área 3-3'-b'-b-3. Como a relação entre essas áreas é maior que a relação entre o trabalho líquido e o calor fornecido no restante do ciclo, o superaquecimento do vapor resulta em um aumento do rendimento do ciclo Rankine. O superaquecimento aumenta a temperatura média de transferência de calor e melhora o título do vapor na saída da turbina \cite{borgnakke-2020}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\textwidth]{./images/efeito-vapor.png}
+	\caption{Efeito do superaquecimento do vapor sobre o rendimento do ciclo Rankine}
+	\label{fig:efeito-vapor}
+	\fonte{\cite{borgnakke-2020}}
+\end{figure}
+
+\subsubsection{Efeito da Pressão Máxima do Vapor}
+
+A Figura \ref{fig:efeito-max-vapor} ilustra o impacto do aumento da pressão máxima do vapor. Mantendo-se constantes a temperatura máxima e a pressão de saída da turbina, o calor rejeitado diminui com a área b'-4'-4-b-b'. O trabalho líquido aumenta com a área hachurada simples e diminui com a área duplamente hachurada. O rendimento do ciclo aumenta com o aumento da pressão, pois o calor rejeitado diminui e a temperatura média de fornecimento de calor aumenta
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\textwidth]{./images/efeito-max-vapor.png}
+	\caption{Efeito da pressão máxima do vapor sobre o rendimento do ciclo Rankine}
+	\label{fig:efeito-max-vapor}
+	\fonte{\cite{borgnakke-2020}}
+\end{figure}
+
+A Figura \ref{fig:efeito-pressao-temperatura} mostra como a pressão e a temperatura afetam o trabalho do ciclo Rankine. Já a Figura \ref{fig:efeito-pressao-temperatura-eficiencia} apresenta a influência dessas variáveis na eficiência do ciclo. Ambas destacam os efeitos combinados das variáveis.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\textwidth]{./images/efeito-pressao-temperatura.png}
+	\caption{Efeito da pressão e da temperatura no trabalho do ciclo Rankine}
+	\label{fig:efeito-pressao-temperatura}
+	\fonte{\cite{borgnakke-2020}}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.4\textwidth]{./images/efeito-pressao-temperatura-eficiencia.png}
+	\caption{Efeito da pressão e da temperatura na eficiência do ciclo Rankine}
+	\label{fig:efeito-pressao-temperatura-eficiencia}
+	\fonte{\cite{borgnakke-2020}}
+\end{figure}
+
+Esses três fatores combinados podem otimizar o ciclo Rankine, desde que o projeto evite problemas como erosão das palhetas da turbina devido a altos níveis de umidade.
+Além dessas considerações, observamos que o ciclo é representado por quatro processos conhecidos (dois isobáricos e dois isentrópicos) que se desenrolam entre os quatro estados, abrangendo um total de oito características. Assumindo que o estado 1 seja um estado líquido saturado (x1 = 0), precisamos definir três parâmetros (8-4-1). A pressão operacional é controlada fisicamente pela alta pressão produzida pela bomba, P2 = P3, o superaquecimento para T3 (ou x3 = 1, se não houver superaquecimento) e a temperatura do condensador T1, que é o resultado da transferência de calor que acontece \cite{borgnakke-2020}.
+
+\subsection{Interpretação Dos Efeito Das Pressões Da Caldeira E Do Condensador}
+
+A Figura \ref{fig:efeitos-caldeira} exibe dois ciclos ideais submetidos à mesma pressão. Contudo, com pressões distintas na caldeira. Conforme a análise, a temperatura média do calor adicionado é maior no ciclo de pressão mais elevada 1' - 2' - 3' - 4' - 1' do que no ciclo 1 - 2 - 3 - 4 - 1. Portanto, o aumento da pressão na caldeira do ciclo ideal de Rankine tende a eficiência térmica.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\textwidth]{./images/efeitos-caldeira.png}
+	\caption{Efeitos da variação das pressões de operação do ciclo ideal Rankine na caldeira}
+	\label{fig:efeitos-caldeira}
+	\fonte{\cite{moran-2018}}
+\end{figure}
+
+A Figura \ref{fig:efeito-condensador} ilustra dois ciclos com pressões idênticas na caldeira, mas com duas pressões distintas no condensador. Um condensador funciona sob a pressão atmosférica, enquanto o outro opera sob uma pressão inferior à atmosfera. Para os ciclos 1-2-3-4-1 que condensam sob pressão atmosférica, a temperatura de rejeição de calor é de 100 °C (212 °F). A temperatura do calor devolvido para o ciclo de pressão mais baixa 1 - 2"- 3"- 4"- 1 é menor, resultando em uma maior eficiência térmica para este ciclo. Portanto, conclui-se que a redução da pressão no compressor tende a incrementar a eficiência térmica.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./images/efeito-condensador.png}
+	\caption{Efeitos da variação das pressões de operação do ciclo ideal Rankine no condensador}
+	\label{fig:efeito-condensador}
+	\fonte{\cite{moran-2018}}
+\end{figure}
+
+O condensador opera com a pressão de saturação equivalente à temperatura ambiente, pois esta é a temperatura ideal para a dissipação de calor para as proximidades. A finalidade de manter a pressão de exaustão mais baixa possível na turbina é a principal razão para a inclusão do condensador em uma instalação de potência. A caldeira poderia ser abastecida com água líquida à pressão atmosférica por meio da bomba, enquanto o vapor poderia ser liberado diretamente no ar ao sair da turbina. No entanto, ao incorporar um condensador, que opera a vapor a uma pressão inferior à atmosférica, a turbina terá uma área de pressão mais baixa onde será feita a descarga, o que resultará em um aumento do trabalho líquido da eficiência térmica. Incorporando um condensador adicional, o fluido de trabalho funcionará em circuito fechado, garantindo uma circulação constante do fluido de trabalho.
+
+\subsection{Efeito da temperatura na eficiência térmica}
+
+Basicamente o ciclo ideal Rankine consiste em processos onde existem reversibilidades internas, o que nos possibilita obter uma expressão para eficiência térmica em função das temperaturas médias durante o processo de interação térmica. A eficiência térmica do ciclo ideal Rankine é expressa pela equação \ref{eq:eficiencia-termica-temperatura}.
+
+\begin{equation}
+	\eta_{ideal} = 1 - \frac{T_{sai}}{T_{ent}}
+	\label{eq:eficiencia-termica-temperatura}
+\end{equation}
+
+Pode-se concluir que a eficiência térmica do ciclo ideal tende a aumentar quando a temperatura média pela qual a energia é adicionada por transferência de calor aumenta ou a temperatura pela qual a energia rejeitada diminui.
+
+\section{Ciclos de Rankine Modificados}
+
+\subsection{Tipos de modificações}
+
+O ciclo de Rankine pode ser modificado de várias maneiras para melhorar sua eficiência e desempenho. As modificações mais comuns incluem o superaquecimento, o reaquecimento e a regeneração térmica. Cada uma dessas técnicas tem o objetivo de aumentar a eficiência térmica do ciclo, reduzindo as perdas de calor e melhorando a qualidade do vapor na saída da turbina.
+
+\subsubsection{Reaquecimento}
+
+O ciclo Rankine com reaquecimento foi projetado para aproveitar o aumento de rendimento proporcionado por pressões mais altas, evitando umidade excessiva nos estágios de baixa pressão da turbina. Conforme ilustrado na Figura \ref{fig:reaquecimento}, o vapor inicialmente se expande até uma pressão intermediária na turbina, sendo reaquecido na caldeira antes de expandir novamente até a pressão de saída. Embora o diagrama T-s demonstre que o reaquecimento proporciona um pequeno ganho de rendimento devido à pequena variação na temperatura média de fornecimento de calor, sua principal vantagem reside na redução da umidade nos estágios finais da turbina. O autor destaca ainda que, caso os metais permitam um superaquecimento adequado do vapor até 3', o ciclo Rankine simples seria mais eficiente que o ciclo com reaquecimento, tornando este último desnecessário \cite{borgnakke-2020}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.65\textwidth]{./images/reaquecimento.png}
+	\caption{Ciclo Rankine com reaquecimento}
+	\label{fig:reaquecimento}
+	\fonte{\cite{borgnakke-2020}}
+\end{figure}
+
+\subsubsection{Regeneração}
+
+O ciclo Rankine regenerativo é uma importante variação que utiliza aquecedores da água de alimentação para melhorar a eficiência do sistema. Como mostrado na Figura \ref{fig:regerenacao}, no ciclo sem superaquecimento, o fluido de trabalho é aquecido na fase líquida entre os estados 2 e 2', com uma temperatura média significativamente menor em comparação ao processo de vaporização (2'-3). Isso resulta em uma temperatura média de transferência de calor inferior à do ciclo de Carnot (1'-2'-3-4-1), acarretando um rendimento menor. No ciclo regenerativo, o fluido entra na caldeira em um estado intermediário entre 2 e 2', aumentando a temperatura média de fornecimento de calor e, consequentemente, o rendimento do ciclo \cite{borgnakke-2020}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./images/regeneracao.png}
+	\caption{Diagrama T-s que mostra a relação entre os rendimentos dos ciclos de Carnot e Rankine.}
+	\label{fig:regerenacao}
+	\fonte{\cite{borgnakke-2020}}
+\end{figure}
+
+O ciclo regenerativo ideal, como ilustrado na Figura \ref{fig:regenerativo}, apresenta uma característica singular em comparação ao ciclo Rankine. Após a saída da bomba, o líquido circula ao redor da carcaça da turbina em sentido contrário ao do vapor, permitindo a transferência de calor do vapor para o líquido de forma teoricamente reversível. Nesse cenário ideal, a linha 4-5 no diagrama T-s, que representa o escoamento do vapor pela turbina, é paralela à linha 1-2-3, que indica o processo de bombeamento e o escoamento do líquido ao redor da turbina. As áreas 2-3-b-a-2 e 5-4-d-c-5 são congruentes e representam o calor transferido entre vapor e líquido. Esse ciclo apresenta rendimento térmico equivalente ao do ciclo de Carnot, já que a área 1-5-c-a-1 é igual à área de calor rejeitado do ciclo de Carnot \cite{borgnakke-2020}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.65\textwidth]{./images/regenerativo.png}
+	\caption{Ciclo Rankine regenerativo ideal}
+	\label{fig:regenerativo}
+	\fonte{\cite{borgnakke-2020}}
+\end{figure}
+
+Na prática, no entanto, a implementação desse ciclo ideal é inviável devido à dificuldade de realizar uma transferência de calor eficiente na turbina e ao aumento significativo da umidade do vapor na saída. O ciclo regenerativo real, mostrado na Figura \ref{fig:reg-aquecedor}, resolve essa limitação com a extração de parte do vapor parcialmente expandido na turbina, que é direcionado a aquecedores da água de alimentação. O líquido condensado é bombeado para se misturar ao vapor extraído, resultando em uma mistura saturada no estado 3. Para atingir a pressão da caldeira, uma segunda bomba é necessária. A vantagem principal desse ciclo é o aumento da temperatura média na qual o calor é fornecido ao fluido de trabalho, melhorando a eficiência térmica em comparação ao ciclo Rankine convencional \cite{borgnakke-2020}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.65\textwidth]{./images/regenerativo-aquecedor.png}
+	\caption{Ciclo regenerativo com aquecedor de água de alimentação de mistura}
+	\label{fig:reg-aquecedor}
+	\fonte{\cite{borgnakke-2020}}
+\end{figure}
+
+\subsubsection{Cogeração}
+
+
+
 
 % ---
 % Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
@@ -313,6 +504,7 @@ A eficiência térmica do ciclo Rankine é dada pela razão entre o trabalho lí
 % ----------------------------------------------------------
 % Referências bibliográficas
 % ----------------------------------------------------------
+\clearpage
 \bibliography{references}
 
 
