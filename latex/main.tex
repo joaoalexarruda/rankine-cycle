@@ -495,6 +495,20 @@ A cogeração é uma aplicação industrial do ciclo de potência a vapor que co
 A cogeração pode operar em diferentes arranjos: em algumas instalações, o vapor é o produto principal e a eletricidade é um subproduto, típico de fábricas e pequenas unidades; em outros casos, como em empresas de geração elétrica, a eletricidade é o foco principal, com o vapor como subproduto. Exemplos incluem plantas que fornecem eletricidade para a rede e água quente para aquecimento domiciliar, desde que a densidade populacional e as distâncias de distribuição sejam favoráveis.
 A cogeração de energia pode ser amplamente aplicada na indústria alimentícia, oferecendo múltiplos benefícios por meio da integração de processos. Por exemplo, sistemas de cogeração permitem gerar eletricidade para alimentar equipamentos, reduzindo a dependência da rede externa e garantindo estabilidade energética, enquanto subprodutos como vapor são aproveitados em etapas de cozimento, esterilização ou secagem de alimentos. Além disso, a água quente produzida pelo sistema atende a demandas de limpeza e sanitização, e a água gelada, gerada por chillers de absorção a partir de 5°C, é empregada no resfriamento de produtos e climatização. O ar quente derivado do processo auxilia em etapas como secagem, e até mesmo a produção de $CO_2$ de alta pureza para bebidas é viabilizada com custos reduzidos. Dessa forma, a cogeração otimiza recursos, diminui despesas com energia e aumenta a eficiência operacional, integrando necessidades térmicas, elétricas e industriais em um único sistema sustentável \cite{Ecogen_Cogeracao_2025}.
 
+\subsubsection{Superaquecimento}
+
+No processo de superaquecimento não existe limitação quanto à presença de vapor saturado na entrada da turbina, possibilitando adicionar mais energia ao vapor através da transferência de calor, fazendo com que a condição de vapor superaquecido eleve antes de entrar na turbina. O equipamento chamado de superaquecedor que gera essa energia extra que trabalha em conjunto com a caldeira, formando o gerador de vapor. Na Figura \ref{fig:superaquecido}, é mostrado um ciclo ideal de Rankine com vapor superaquecido na entrada da turbina, representado pelo ciclo 1'-2'-3-4-1' que em comparação ao ciclo sem superaquecimento (ciclo 1-2-3-4-1) possui uma temperatura média mais elevada durante a adição de calor, o que aumenta a eficiência térmica do sistema.
+Outra vantagem é que o título do vapor no estado 2' (saída da turbina) é maior do que no estado 2 (sem superaquecimento). Isso reduz o problema associado ao baixo título do vapor na saída da turbina, comum em ciclos sem superaquecimento. Com isso, um controle adequado do superaquecimento, é possível até mesmo garantir que o vapor na saída da turbina permaneça na região de vapor superaquecido.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./images/superaquecido.png}
+	\caption{Ciclo Rankine com superaquecimento}
+	\label{fig:superaquecido}
+	\fonte{\cite{moran-2018}}
+\end{figure}
+
+
 \subsubsection{Ciclo Supercrítico}
 
 Segundo \citeonline{moran-2018}, a temperatura e a pressão do vapor em turbinas são limitadas pelas propriedades dos materiais empregados em componentes como superaquecedores, reaquecedores e nas próprias turbinas. Pressões elevadas demandam tubulações capazes de suportar altas tensões e temperaturas. Avanços em materiais e métodos de fabricação permitiram elevar esses limites, aumentando a eficiência térmica dos ciclos de geração de energia, reduzindo o consumo de combustível e os impactos ambientais. Conforme ilustrado na Figura \ref{fig:supercritico}, que representa um ciclo ideal de reaquecimento, em plantas supercríticas, a geração de vapor ocorre acima da pressão crítica da água (22,1 MPa), sem transição brusca entre líquido e vapor, como destacado no Processo 6-1. Nesses sistemas, a água é aquecida gradualmente em tubulações, sem o processo convencional de ebulição, utilizando carvão pulverizado como fonte de energia.
@@ -591,7 +605,15 @@ As seguintes hipóteses serão adotadas no desenvolvimento do problema:
 	\item Saída do condensador (corrente 10): líquido saturado.
 \end{itemize}
 
-A seguir serão apresentas as condições operacionais para o desenvolvimento do trabalho
+\begin{enumerate}
+	\item Determinar a eficiência térmica do sistema modificado proposto.
+	\item Obter a taxa de trabalho realizado em cada turbina; a taxa de calor fornecido nas caldeiras; a taxa de trabalho consumida em cada bomba.
+	\item Determinar a vazão mássica de água de resfriamento empregada no condensador.
+	\item Construir o diagrama T x s do sistema.
+	\item Realizar análise paramétrica no desempenho do ciclo considerando a variação das pressões de descargas das turbinas; e a temperatura de saída da caldeira 1.
+\end{enumerate}
+
+
 
 % ---
 % Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
