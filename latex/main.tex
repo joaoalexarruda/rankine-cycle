@@ -482,8 +482,116 @@ Na prática, no entanto, a implementação desse ciclo ideal é inviável devido
 
 \subsubsection{Cogeração}
 
+A cogeração é uma aplicação industrial do ciclo de potência a vapor que combina a geração de eletricidade com o suprimento de energia térmica para processos produtivos. Como mostrado na Figura \ref{fig:cogeracao}, o vapor expandido até uma pressão intermediária na turbina de alta pressão é utilizado como fonte de energia para o processo produtivo, eliminando a necessidade de uma segunda caldeira dedicada. Esse vapor pode atender demandas específicas, como aquecer ambientes ou fornecer vapor para processos industriais \cite{borgnakke-2020}.
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.65\textwidth]{./images/cogeracao.png}
+	\caption{Ciclo Rankine com cogeração}
+	\label{fig:cogeracao}
+	\fonte{\cite{borgnakke-2020}}
+\end{figure}
 
+A cogeração pode operar em diferentes arranjos: em algumas instalações, o vapor é o produto principal e a eletricidade é um subproduto, típico de fábricas e pequenas unidades; em outros casos, como em empresas de geração elétrica, a eletricidade é o foco principal, com o vapor como subproduto. Exemplos incluem plantas que fornecem eletricidade para a rede e água quente para aquecimento domiciliar, desde que a densidade populacional e as distâncias de distribuição sejam favoráveis.
+A cogeração de energia pode ser amplamente aplicada na indústria alimentícia, oferecendo múltiplos benefícios por meio da integração de processos. Por exemplo, sistemas de cogeração permitem gerar eletricidade para alimentar equipamentos, reduzindo a dependência da rede externa e garantindo estabilidade energética, enquanto subprodutos como vapor são aproveitados em etapas de cozimento, esterilização ou secagem de alimentos. Além disso, a água quente produzida pelo sistema atende a demandas de limpeza e sanitização, e a água gelada, gerada por chillers de absorção a partir de 5°C, é empregada no resfriamento de produtos e climatização. O ar quente derivado do processo auxilia em etapas como secagem, e até mesmo a produção de $CO_2$ de alta pureza para bebidas é viabilizada com custos reduzidos. Dessa forma, a cogeração otimiza recursos, diminui despesas com energia e aumenta a eficiência operacional, integrando necessidades térmicas, elétricas e industriais em um único sistema sustentável \cite{Ecogen_Cogeracao_2025}.
+
+\subsubsection{Ciclo Supercrítico}
+
+Segundo \citeonline{moran-2018}, a temperatura e a pressão do vapor em turbinas são limitadas pelas propriedades dos materiais empregados em componentes como superaquecedores, reaquecedores e nas próprias turbinas. Pressões elevadas demandam tubulações capazes de suportar altas tensões e temperaturas. Avanços em materiais e métodos de fabricação permitiram elevar esses limites, aumentando a eficiência térmica dos ciclos de geração de energia, reduzindo o consumo de combustível e os impactos ambientais. Conforme ilustrado na Figura \ref{fig:supercritico}, que representa um ciclo ideal de reaquecimento, em plantas supercríticas, a geração de vapor ocorre acima da pressão crítica da água (22,1 MPa), sem transição brusca entre líquido e vapor, como destacado no Processo 6-1. Nesses sistemas, a água é aquecida gradualmente em tubulações, sem o processo convencional de ebulição, utilizando carvão pulverizado como fonte de energia.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./images/supercritico.png}
+	\caption{Ciclo Rankine supercrítico}
+	\label{fig:supercritico}
+	\fonte{\cite{moran-2018}}
+\end{figure}
+
+Plantas supercríticas modernas operam com pressões próximas a 30 MPa e temperaturas de 600 °C, alcançando eficiências térmicas de até 47\%. Com o desenvolvimento de superligas resistentes à corrosão e altas temperaturas, plantas ultrassupercríticas atingem 35 MPa e 750 °C, superando 50\% de eficiência. Em contraste, usinas subcríticas têm eficiência máxima de cerca de 40\%. Embora o custo inicial das plantas supercríticas seja maior, o menor consumo de combustível compensa economicamente a longo prazo. Além disso, a redução no uso de combustível diminui emissões de $CO_2$, outros poluentes e resíduos sólidos, tornando essas tecnologias mais sustentáveis. Esse avanço, exemplificado pelas figuras mencionadas, demonstra como inovações técnicas promovem eficiência energética, economia de recursos e menor impacto ambiental \cite{moran-2018}.
+
+\subsection{Desempenho dos ciclos modificados}
+
+Os ciclos de potência a vapor desempenham um papel fundamental na conversão de energia térmica em trabalho útil. O ciclo de Rankine simples é amplamente utilizado, mas sua eficiência pode ser melhorada por modificações. A seguir três formas de realizar isso para o ciclo de Rankine simples ideal \cite{cengel-2008}.
+
+\subsubsection{Comparação da Eficiência dos Ciclos Modificados com o Ciclo Simples}
+
+A eficiência térmica do ciclo de Rankine pode ser aumentada por três principais modificações:
+
+\subsubsubsection{Redução da pressão no condensador}
+
+Como ilustrado na Figura \ref{fig:reducao-pressao}, o efeito da diminuição da pressão no condensador sobre a eficiência do ciclo de Rankine, o estado de entrada na turbina é mantido o mesmo. A área colorida desse diagrama representa o aumento do trabalho líquido devido à diminuição da pressão do condensador de P4 para P4'. O consumo de calor também aumenta (área sob a curva 2'-2), mas o aumento é muito pequeno. Deste modo, o efeito global da diminuição da pressão no condensador é um aumento na eficiência térmica do ciclo.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.3\textwidth]{./images/reducao-pressao.png}
+	\caption{Efeito da redução da pressão no condensador sobre a eficiência do ciclo de Rankine}
+	\label{fig:reducao-pressao}
+	\fonte{\cite{cengel-2008}}
+\end{figure}
+
+\subsubsubsection{Superaquecimento do vapor}
+
+O superaquecimento do vapor permite aumentar a temperatura média de adição de calor sem elevar a pressão da caldeira, melhorando a eficiência dos ciclos de potência a vapor. No diagrama T-s, conforme Figura \ref{fig:superaqueci}, isso se reflete no aumento do trabalho líquido e do calor fornecido. Além disso, temperaturas mais altas reduzem a umidade do vapor na saída da turbina, como mostra o maior título no estado 4' em relação ao estado 4.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.3\textwidth]{./images/superaqueci.png}
+	\caption{O efeito do superaquecimento do vapor a temperaturas mais altas no ciclo de Rankine ideal}
+	\label{fig:superaqueci}
+	\fonte{\cite{cengel-2008}}
+\end{figure}
+
+\subsubsubsection{Aumento da pressão na caldeira}
+
+O efeito do aumento da pressão da caldeira sobre o desempenho dos ciclos de potência a vapor é visto no diagrama T-s exibido na Figura \ref{fig:pressao-caldeira}, observe que para uma temperatura fixa na entrada da turbina, o ciclo se desloca para a esquerda e o conteúdo de umidade do vapor na saída da turbina aumenta. Esse efeito colateral indesejado pode ser corrigido pelo reaquecimento do vapor.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.3\textwidth]{./images/pressao-caldeira.png}
+	\caption{Efeito do aumento da pressão da caldeira sobre o desempenho dos ciclos de potência a vapor}
+	\label{fig:pressao-caldeira}
+	\fonte{\cite{cengel-2008}}
+\end{figure}
+
+Os efeitos da redução da pressão no condensador, do superaquecimento do vapor a temperaturas mais altas e do aumento da pressão da caldeira sobre a eficiência térmica do ciclo Rankine é mostrado no diagrama T-s contido na Figura \ref{fig:diagramas-ts-3-ciclos}, resultado de um exemplo resolvido do livro \cite{cengel-2008}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{./images/diagramas-ts-3-ciclos.png}
+	\caption{Diagramas T-s dos três ciclos de potência a vapor}
+	\label{fig:diagramas-ts-3-ciclos}
+	\fonte{\cite{cengel-2008}}
+\end{figure}
+
+O exemplo analisa os efeitos das alterações na pressão da caldeira e na temperatura de superaquecimento sobre a eficiência térmica de uma usina operando no ciclo de Rankine ideal, onde vapor entra na turbina a 3 MPa e 350 °C e é condensado no condensador à pressão de 10 KPa.
+Na Figura \ref{fig:diagramas-ts-3-ciclos} (a), a redução da pressão no condensador de 75 kPa para 10 kPa eleva a eficiência térmica de 26\% para 33,4\%. No entanto, essa mudança também aumenta a umidade do vapor na saída da turbina, passando de 11,4\% para 18,7\%, o que pode causar danos às pás da turbina.
+Na Figura \ref{fig:diagramas-ts-3-ciclos} (b), considera o superaquecimento do vapor, comparando temperaturas de 350 °C e 600 °C a 3 MPa. Com essa alteração, a eficiência térmica sobe para 37,3\%, além de reduzir a umidade do vapor para 8,5\%, minimizando o risco de erosão nas pás da turbina.
+Na Figura \ref{fig:diagramas-ts-3-ciclos} (c), o aumento da pressão da caldeira de 3 MPa para 15 MPa, mantendo a temperatura fixa em 600 °C, faz a eficiência térmica atingir 43\%, um valor próximo ao limite teórico. Entretanto, essa mudança eleva novamente a umidade do vapor na saída da turbina para 19,6\%, tornando necessário o uso de técnicas como reaquecimento para mitigar esse efeito.
+
+\section{Modelo Matemático}
+
+\subsection{Detalhamento do Problema}
+
+O problema proposto consiste na análise de um ciclo termodinâmico de potência, representado pela Figura \ref{fig:esquema-problema}, que mostra um esquema composto por múltiplos equipamentos que operam o ciclo.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{./images/esquema-problema.png}
+	\caption{Esquema do ciclo termodinâmico de potência}
+	\label{fig:esquema-problema}
+\end{figure}
+
+As seguintes hipóteses serão adotadas no desenvolvimento do problema:
+
+\begin{itemize}
+	\item Fluido de trabalho: vapor d’água.
+	\item Perda de carga desprezível nos equipamentos de troca térmica.
+	\item Operação isentrópica das turbinas e das bombas.
+	\item Vazão mássica ($\dot{m}$) da corrente 1 fixa em 10.000 kg/h.
+	\item Saída do condensador (corrente 10): líquido saturado.
+\end{itemize}
+
+A seguir serão apresentas as condições operacionais para o desenvolvimento do trabalho
 
 % ---
 % Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
