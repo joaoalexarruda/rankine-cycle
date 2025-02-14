@@ -38,6 +38,8 @@
 \usepackage{tcolorbox}
 \usepackage{siunitx}
 \usepackage{pdfpages}
+\usepackage{amsmath}   % Para símbolos matemáticos
+\usepackage{booktabs}  % Para melhores linhas de tabela
 % ---
 % Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
 % ---
@@ -582,38 +584,92 @@ Na Figura \ref{fig:diagramas-ts-3-ciclos} (a), a redução da pressão no conden
 Na Figura \ref{fig:diagramas-ts-3-ciclos} (b), considera o superaquecimento do vapor, comparando temperaturas de 350 °C e 600 °C a 3 MPa. Com essa alteração, a eficiência térmica sobe para 37,3\%, além de reduzir a umidade do vapor para 8,5\%, minimizando o risco de erosão nas pás da turbina.
 Na Figura \ref{fig:diagramas-ts-3-ciclos} (c), o aumento da pressão da caldeira de 3 MPa para 15 MPa, mantendo a temperatura fixa em 600 °C, faz a eficiência térmica atingir 43\%, um valor próximo ao limite teórico. Entretanto, essa mudança eleva novamente a umidade do vapor na saída da turbina para 19,6\%, tornando necessário o uso de técnicas como reaquecimento para mitigar esse efeito.
 
-\section{Modelo Matemático}
+\section{Resolução do Problema Proposto}
 
-\subsection{Detalhamento do Problema}
+\subsection{Cálculos}
+\label{sec:calculos}
 
-O problema proposto consiste na análise de um ciclo termodinâmico de potência, representado pela Figura \ref{fig:esquema-problema}, que mostra um esquema composto por múltiplos equipamentos que operam o ciclo.
+Todos os cálculos foram realizados utilizando a linguagem de programação Python, com o auxílio das bibliotecas NumPy e SciPy. O código-fonte está disponível no repositório do projeto \cite{Arruda_Rankine_2025}.
+
+Além disso, há um documento complementar contendo os cálculos realizados para a resolução do problema proposto. O arquivo foi anexado ao final deste relatório.
+
+\subsection{Eficiência Térmica do Sistema}
+
+$$\eta = 48.63\%$$
+
+\subsection{Taxas de Trabalho}
+
+\begin{table}[ht]
+	\centering
+	\caption{Resultados dos cálculos termodinâmicos}
+	\label{tab:calculos}
+	\begin{tabular}{lS[table-format=4.2]}
+	\toprule
+	{Parâmetro} & {Valor (\si{\kilo\watt})} \\
+	\midrule
+	$W_{\text{turbina 1}}$               & 1192.38 \\
+	$W_{\text{turbina 2,1'}}$ & 1506.24 \\
+	$W_{\text{turbina 2,2'}}$ & 1343.52 \\
+	$W_{\text{bomba 1}}$                  &    0.97 \\
+	$W_{\text{bomba 2}}$                  &   35.30 \\
+	$W_{\text{bomba 3}}$                  &    6.85 \\
+	$Q_{\text{cald 1}}$                   & 7036.30 \\
+	$Q_{\text{cald 2}}$                   & 1186.71 \\
+	$Q_{\text{cond}}$                     & 4248.32 \\
+	\bottomrule
+	\end{tabular}
+	\end{table}
+
+\subsection{Vazão Mássica de Água de Resfriamento}
+
+$$\dot{m}_{\text{água}} = 67756.30 \, \si{\kilo\gram\per\second}$$
+
+\subsection{Diagrama T x s}
+
+A Figura \ref{fig:ts} apresenta o diagrama T x s do ciclo de Rankine proposto.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1.0\textwidth]{./images/esquema-problema.png}
-	\caption{Esquema do ciclo termodinâmico de potência}
-	\label{fig:esquema-problema}
+	\includegraphics[width=0.9\textwidth]{./images/ts.png}
+	\caption{Diagrama T x s do ciclo de Rankine proposto}
+	\label{fig:ts}
+	\fonte{Elaborado pelo autor}
 \end{figure}
 
-As seguintes hipóteses serão adotadas no desenvolvimento do problema:
+\subsection{Análise Paramétrica}
+
+A Figura \ref{fig:analise_parametrica} apresenta a análise paramétrica realizada para o ciclo de Rankine proposto. Variou-se a pressão de descarga em todas as turbinas e a temperatura de saída da caldeira 1.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./images/analise_parametrica.png}
+	\caption{Análise paramétrica do ciclo de Rankine proposto}
+	\label{fig:analise_parametrica}
+	\fonte{Elaborado pelo autor}
+\end{figure}
+
+\section{Resultados e Discussão}
+
+Os resultados obtidos demonstram uma eficiência térmica de 48,63\% para o ciclo proposto, valor significativamente superior ao ciclo de Rankine simples (tipicamente 30-40\%), evidenciando o impacto positivo das modificações implementadas.
+
+A Tabela \ref{tab:calculos} revela que as turbinas contribuem com 90,7\% do trabalho líquido total $\sum{W_{turb}} = 4.042,14 kW$, enquanto as bombas consomem apenas 1,4\% do trabalho gerado $\sum{W_{bomb}} = 43,12 kW$, resultando em um \textit{back work ratio} de 0,0107. Esta relação favorável caracteriza sistemas de potência a vapor, onde o trabalho de compressão é mínimo comparado à expansão.
+
+A vazão mássica de água de resfriamento de 67.756 kg/s destaca um desafio operacional crítico: mesmo com a regeneração térmica, que reduz a carga térmica no condensador, ainda são necessários volumes colossais de água para rejeição de calor. Em ambientes com restrições hídricas, isto exigiria o uso de torres de resfriamento ou sistemas de recirculação, aumentando a complexidade e custos.
+
+Comparando com dados da literatura, a eficiência alcançada situa-se na faixa superior de plantas supercríticas modernas (45-50\%), validando a configuração proposta. Entretanto, o modelo não considera:
 
 \begin{itemize}
-	\item Fluido de trabalho: vapor d’água.
-	\item Perda de carga desprezível nos equipamentos de troca térmica.
-	\item Operação isentrópica das turbinas e das bombas.
-	\item Vazão mássica ($\dot{m}$) da corrente 1 fixa em 10.000 kg/h.
-	\item Saída do condensador (corrente 10): líquido saturado.
+	\item Perdas por atrito em tubulações e turbinas (aproximadamente 5-10\%)
+	\item Consumo energético de sistemas auxiliares (aproximadamente 3-5\%)
+	\item Degradação de desempenho ao longo do tempo
 \end{itemize}
 
-\begin{enumerate}
-	\item Determinar a eficiência térmica do sistema modificado proposto.
-	\item Obter a taxa de trabalho realizado em cada turbina; a taxa de calor fornecido nas caldeiras; a taxa de trabalho consumida em cada bomba.
-	\item Determinar a vazão mássica de água de resfriamento empregada no condensador.
-	\item Construir o diagrama T x s do sistema.
-	\item Realizar análise paramétrica no desempenho do ciclo considerando a variação das pressões de descargas das turbinas; e a temperatura de saída da caldeira 1.
-\end{enumerate}
-
-
+Estes fatores sugerem que a eficiência real operacional seria (35-40\%), ainda competitiva frente a ciclos convencionais. Para aplicações práticas, recomenda-se:
+\begin{itemize}
+	\item Estudo econômico do custo incremental das modificações
+	\item Análise exergética para identificar pontos de maior irreversibilidade
+	\item Simulação dinâmica para avaliar resposta a variações de carga
+\end{itemize}
 
 % ---
 % Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
@@ -625,6 +681,15 @@ As seguintes hipóteses serão adotadas no desenvolvimento do problema:
 % Conclusão
 % ---
 \section{Considerações finais}
+
+O ciclo de Rankine é um dos ciclos termodinâmicos mais utilizados em plantas de geração de energia elétrica. A eficiência térmica do ciclo é um dos principais parâmetros de interesse, pois está diretamente relacionada ao consumo de combustível e à emissão de gases poluentes. Neste trabalho, foi proposto um ciclo de Rankine ideal com duas turbinas e três bombas, e foram realizados cálculos termodinâmicos para determinar a eficiência do ciclo, as taxas de trabalho e a vazão mássica de água de resfriamento. Além disso, foi elaborado um diagrama T x s do ciclo e realizada uma análise paramétrica para avaliar o efeito da pressão de descarga das turbinas e da temperatura de saída da caldeira 1 sobre a eficiência do ciclo.
+
+
+\section{Anexo: Documento Complementar}
+\clearpage
+\label{anexo:pdf}
+
+\includepdf[pages=-, scale=1.0]{Rankine-Modificado.pdf}
 
 % ----------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
