@@ -18,3 +18,4 @@
 {"rule":"MORFOLOGIK_RULE_PT_BR","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-)[0-9]+\\Qturbina \\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-)[0-9]+\\Qcaldeira \\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-)[0-9]+$"}
 {"rule":"MORFOLOGIK_RULE_PT_BR","sentence":"^\\Qbwr \\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-)[0-9]+\\Qbomba \\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-)[0-9]+\\Qturbina \\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-)[0-9]+$"}
 {"rule":"GENERAL_NUMBER_AGREEMENT_ERRORS","sentence":"^\\QO superaquecimento também reduz a umidade do vapor, evitando problemas como erosão das palhetas da turbina.\\E$"}
+{"rule":"MORFOLOGIK_RULE_PT_BR","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-)[0-9]+\\Qágua \\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-)[0-9]+$"}

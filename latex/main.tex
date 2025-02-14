@@ -33,6 +33,7 @@
 \usepackage{microtype} 			% para melhorias de justificação
 % ---
 \usepackage{hyperref}
+\usepackage{float}
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{tcolorbox}
@@ -208,9 +209,9 @@ O Ciclo de Rankine é um ciclo termodinâmico idealizado que descreve o funciona
 
 \begin{figure}[h]
 	\centering
-	\caption{Esquema simplificado e o diagrama T-S do ciclo Rankine}
 	\includegraphics[width=0.7\textwidth]{./images/Esquema simplificado e o diagrama T-S do ciclo Rankine.png}
 	\label{fig:esquema-simplificado-ciclo-rankine}
+	\caption{Esquema simplificado e o diagrama T-S do ciclo Rankine}
 	\fonte{Adaptado de \cite{borgnakke-2020}}
 \end{figure}
 
@@ -235,11 +236,10 @@ Focando no subsistema mostrado na Figura \ref{fig:planta-exemplo}, modelam-se os
 
 \begin{figure}[h]
 	\centering
-	\caption{Planta de potência a vapor acionada por combustível fóssil}
-	\includegraphics[width=1.0\textwidth]{./images/planta-exemplo.png}
+	\includegraphics[width=0.9\textwidth]{./images/planta-exemplo.png}
 	\label{fig:planta-exemplo}
-	\fonte{\
-	cite{moran-2018}}
+	\caption{Planta de potência a vapor acionada por combustível fóssil}
+	\fonte{\cite{moran-2018}}
 \end{figure}
 
 No diagrama da Fig. 2, trabalho e calor são positivos conforme as setas, para simplificar a análise usamos algumas hipóteses frequentes, conforme descrito abaixo:
@@ -307,9 +307,9 @@ A taxa de calor representa a quantidade de energia térmica fornecida ao sistema
 
 \begin{figure}[h]
 	\centering
-	\caption{Planta de potência a vapor acionada por combustível fóssil}
 	\includegraphics[width=0.5\textwidth]{./images/trabalho-realizado.png}
 	\label{fig:trabalho-realizado}
+	\caption{Planta de potência a vapor acionada por combustível fóssil}
 	\fonte{\cite{moran-2018}}
 \end{figure}
 
@@ -328,9 +328,9 @@ A Figura \ref{fig:etn} mostra a turbina de Angra 2, uma usina nuclear que opera 
 
 \begin{figure}[h]
 	\centering
-	\caption{Turbina de Angra 2}
-	\includegraphics[width=0.7\textwidth]{./images/etn.jpg}
+	\includegraphics[width=0.6\textwidth]{./images/etn.jpg}
 	\label{fig:etn}
+	\caption{Turbina de Angra 2}
 	\fonte{\cite{Eletronuclear_Imagem_Angra}}
 \end{figure}
 
@@ -346,9 +346,9 @@ No diagrama T-s da Figura \ref{fig:efeito-pressao}, observa-se o efeito da redu�
 
 \begin{figure}[h]
 	\centering
-	\caption{Efeito da pressão de descarga da turbina sobre o rendimento do ciclo Rankine}
 	\includegraphics[width=0.4\textwidth]{./images/efeito-pressao.png}
 	\label{fig:efeito-pressao}
+	\caption{Efeito da pressão de descarga da turbina sobre o rendimento do ciclo Rankine}
 	\fonte{\cite{borgnakke-2020}}
 \end{figure}
 
@@ -456,7 +456,7 @@ O ciclo Rankine regenerativo é uma importante variação que utiliza aquecedore
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.5\textwidth]{./images/regeneracao.png}
+	\includegraphics[width=0.45\textwidth]{./images/regeneracao.png}
 	\caption{Diagrama T-s que mostra a relação entre os rendimentos dos ciclos de Carnot e Rankine.}
 	\label{fig:regerenacao}
 	\fonte{\cite{borgnakke-2020}}
@@ -488,7 +488,7 @@ A cogeração é uma aplicação industrial do ciclo de potência a vapor que co
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.65\textwidth]{./images/cogeracao.png}
+	\includegraphics[width=0.55\textwidth]{./images/cogeracao.png}
 	\caption{Ciclo Rankine com cogeração}
 	\label{fig:cogeracao}
 	\fonte{\cite{borgnakke-2020}}
@@ -504,7 +504,7 @@ Outra vantagem é que o título do vapor no estado 2' (saída da turbina) é mai
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.5\textwidth]{./images/superaquecido.png}
+	\includegraphics[width=0.42\textwidth]{./images/superaquecido.png}
 	\caption{Ciclo Rankine com superaquecimento}
 	\label{fig:superaquecido}
 	\fonte{\cite{moran-2018}}
@@ -517,7 +517,7 @@ Segundo \citeonline{moran-2018}, a temperatura e a pressão do vapor em turbinas
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.5\textwidth]{./images/supercritico.png}
+	\includegraphics[width=0.3\textwidth]{./images/supercritico.png}
 	\caption{Ciclo Rankine supercrítico}
 	\label{fig:supercritico}
 	\fonte{\cite{moran-2018}}
@@ -529,51 +529,12 @@ Plantas supercríticas modernas operam com pressões próximas a 30 MPa e temper
 
 Os ciclos de potência a vapor desempenham um papel fundamental na conversão de energia térmica em trabalho útil. O ciclo de Rankine simples é amplamente utilizado, mas sua eficiência pode ser melhorada por modificações. A seguir três formas de realizar isso para o ciclo de Rankine simples ideal \cite{cengel-2008}.
 
-\subsubsection{Comparação da Eficiência dos Ciclos Modificados com o Ciclo Simples}
-
-A eficiência térmica do ciclo de Rankine pode ser aumentada por três principais modificações:
-
-\subsubsubsection{Redução da pressão no condensador}
-
-Como ilustrado na Figura \ref{fig:reducao-pressao}, o efeito da diminuição da pressão no condensador sobre a eficiência do ciclo de Rankine, o estado de entrada na turbina é mantido o mesmo. A área colorida desse diagrama representa o aumento do trabalho líquido devido à diminuição da pressão do condensador de P4 para P4'. O consumo de calor também aumenta (área sob a curva 2'-2), mas o aumento é muito pequeno. Deste modo, o efeito global da diminuição da pressão no condensador é um aumento na eficiência térmica do ciclo.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.3\textwidth]{./images/reducao-pressao.png}
-	\caption{Efeito da redução da pressão no condensador sobre a eficiência do ciclo de Rankine}
-	\label{fig:reducao-pressao}
-	\fonte{\cite{cengel-2008}}
-\end{figure}
-
-\subsubsubsection{Superaquecimento do vapor}
-
-O superaquecimento do vapor permite aumentar a temperatura média de adição de calor sem elevar a pressão da caldeira, melhorando a eficiência dos ciclos de potência a vapor. No diagrama T-s, conforme Figura \ref{fig:superaqueci}, isso se reflete no aumento do trabalho líquido e do calor fornecido. Além disso, temperaturas mais altas reduzem a umidade do vapor na saída da turbina, como mostra o maior título no estado 4' em relação ao estado 4.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.3\textwidth]{./images/superaqueci.png}
-	\caption{O efeito do superaquecimento do vapor a temperaturas mais altas no ciclo de Rankine ideal}
-	\label{fig:superaqueci}
-	\fonte{\cite{cengel-2008}}
-\end{figure}
-
-\subsubsubsection{Aumento da pressão na caldeira}
-
-O efeito do aumento da pressão da caldeira sobre o desempenho dos ciclos de potência a vapor é visto no diagrama T-s exibido na Figura \ref{fig:pressao-caldeira}, observe que para uma temperatura fixa na entrada da turbina, o ciclo se desloca para a esquerda e o conteúdo de umidade do vapor na saída da turbina aumenta. Esse efeito colateral indesejado pode ser corrigido pelo reaquecimento do vapor.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.3\textwidth]{./images/pressao-caldeira.png}
-	\caption{Efeito do aumento da pressão da caldeira sobre o desempenho dos ciclos de potência a vapor}
-	\label{fig:pressao-caldeira}
-	\fonte{\cite{cengel-2008}}
-\end{figure}
 
 Os efeitos da redução da pressão no condensador, do superaquecimento do vapor a temperaturas mais altas e do aumento da pressão da caldeira sobre a eficiência térmica do ciclo Rankine é mostrado no diagrama T-s contido na Figura \ref{fig:diagramas-ts-3-ciclos}, resultado de um exemplo resolvido do livro \cite{cengel-2008}.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1.0\textwidth]{./images/diagramas-ts-3-ciclos.png}
+	\includegraphics[width=0.85\textwidth]{./images/diagramas-ts-3-ciclos.png}
 	\caption{Diagramas T-s dos três ciclos de potência a vapor}
 	\label{fig:diagramas-ts-3-ciclos}
 	\fonte{\cite{cengel-2008}}
@@ -589,7 +550,8 @@ Na Figura \ref{fig:diagramas-ts-3-ciclos} (c), o aumento da pressão da caldeira
 \subsection{Cálculos}
 \label{sec:calculos}
 
-Todos os cálculos foram realizados utilizando a linguagem de programação Python, com o auxílio das bibliotecas NumPy e SciPy. O código-fonte está disponível no repositório do projeto \cite{Arruda_Rankine_2025}.
+Todos os cálculos foram realizados utilizando a linguagem de programação Python, com o auxílio das bibliotecas NumPy e SciPy. O código-fonte está disponível no repositório do projeto, e pode ser acessado clicando em: \href{https://github.com/joaoalexarruda/rankine-cycle/blob/main/calculos/Rankine-Modificado.ipynb}{Repositório do Rankine-Modificado}
+\cite{Arruda_Rankine_2025}.
 
 Além disso, há um documento complementar contendo os cálculos realizados para a resolução do problema proposto. O arquivo foi anexado ao final deste relatório.
 
@@ -630,7 +592,7 @@ A Figura \ref{fig:ts} apresenta o diagrama T x s do ciclo de Rankine proposto.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.9\textwidth]{./images/ts.png}
+	\includegraphics[width=0.7\textwidth]{./images/ts.png}
 	\caption{Diagrama T x s do ciclo de Rankine proposto}
 	\label{fig:ts}
 	\fonte{Elaborado pelo autor}
@@ -640,9 +602,9 @@ A Figura \ref{fig:ts} apresenta o diagrama T x s do ciclo de Rankine proposto.
 
 A Figura \ref{fig:analise_parametrica} apresenta a análise paramétrica realizada para o ciclo de Rankine proposto. Variou-se a pressão de descarga em todas as turbinas e a temperatura de saída da caldeira 1.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\textwidth]{./images/analise_parametrica.png}
+	\includegraphics[width=0.75\textwidth]{./images/analise_parametrica.png}
 	\caption{Análise paramétrica do ciclo de Rankine proposto}
 	\label{fig:analise_parametrica}
 	\fonte{Elaborado pelo autor}
